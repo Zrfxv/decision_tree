@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+    <title>Aplikasi Prediksi Penyakit Jantung</title>
+</head>
+
+<body class="
+      flex flex-col
+      justify-between
+      item-center
+      p-8
+      min-h-screen
+      bg-gradient-to-r
+      from-red-400
+      to-blue-500
+      text-gray-800
+      md:flex-row
+    ">
+    <main class="bg-white p-16 rounded-lg">
+        <h1 class="text-3xl font-bold mb-8">Prediksi Kanker Payudara</h1>
+
+
+
+
+        </div>
+
+        <form action="{{ url_for('predict') }}" method="post" class="grid grid-cols-2 gap-5">
+
+            <div>
+                <div for="texture_mean" class="mb-2">Texture Mean:</div>
+                <input type="text" name="texture_mean" placeholder="Value Range: 9.71 - 33.81" required="required"
+                    class="p-4 bg-gray-100 rounded-md" />
+
+                <div for="area_mean" class="mt-4 mb-2">Area Mean:</div>
+                <input type="text" name="area_mean" placeholder="Value Range: 181.0 - 2501.0" required="required"
+                    class="p-4 bg-gray-100 rounded-md" />
+
+                <div for="smoothness_mean" class="mt-4 mb-2">Smoothness Mean:</div>
+                <input type="text" name="smoothness_mean" placeholder="Value Range: 0.05 - 0.16" required="required"
+                    class="p-4 bg-gray-100 rounded-md" />
+
+                <div for="concavity_mean" class="mt-4 mb-2">Concavity Mean:</div>
+                <input type="text" name="concavity_mean" placeholder="Value Range: 0.0 - 0.4" required="required"
+                    class="p-4 bg-gray-100 rounded-md" />
+
+                <div for="texture_se" class="mt-4 mb-2">Texture SE:</div>
+                <input type="text" name="texture_se" placeholder="Value Range: 0.36 - 4.89" required="required"
+                    class="p-4 bg-gray-100 rounded-md" />
+            </div>
+            <div>
+                <div for="area_se" class="mb-2">Area SE:</div>
+                <input type="text" name="area_se" placeholder="Value Range: 6.80 - 542.2" required="required"
+                    class="p-4 bg-gray-100 rounded-md" />
+
+                <div for="texture_worst" class="mt-4 mb-2">Texture Worst:</div>
+                <input type="text" name="texture_worst" placeholder="Value Range: 12.0 - 49.5" required="required"
+                    class="p-4 bg-gray-100 rounded-md" />
+
+                <div for="smoothness_worst" class="mt-4 mb-2">Smoothness Worst:</div>
+                <input type="text" name="smoothness_worst" placeholder="Value Range: 0.07 - 0.22" required="required"
+                    class="p-4 bg-gray-100 rounded-md" />
+
+                <div for="compactness_worst" class="mt-4 mb-2">Compactness Worst:</div>
+                <input type="text" name="compactness_worst" placeholder="Value Range: 0.03 - 0.94"
+                    class="p-4 bg-gray-100 rounded-md" />
+
+                <div for="symmetry_worst" class="mt-4 mb-2">Symmetry Worst:</div>
+                <input type="type=" text" name="symmetry_worst" placeholder="Value Range: 0.16 - 0.58"
+                    required="required" class="p-4 bg-gray-100 rounded-md" />
+            </div>
+
+
+            <button type="submit" class="
+            flex
+            justify-center
+            align-center
+            mt-8
+            p-4
+            bg-gradient-to-r
+            from-red-400
+            to-blue-500
+            text-white
+            rounded-md
+          ">
+                PREDIKSI SEKARANG
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-arrow-right ml-4">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </button>
+        </form>
+    </main>
+    <section class="mt-8 h-full flex-auto rounded-lg md:mt-0 md:ml-8">
+        <div class="bg-white p-16 rounded-lg">
+            <h1 class="text-2xl mb-8">Prediksi Resiko Kanker Payudara</h1>
+            <h2 class="text-5xl font-bold">{{ output }}</h2>
+            {% if (output) != 'belum diprediksi' %}
+            <div class="mt-8">
+            </div>
+            {% endif %}
+
+
+        </div>
+        <div class="flex justify-around bg-white p-16 rounded-lg mt-8">
+            <img class="h-24 md:h-28" src="nama.png" alt="logo-nama" />
+            <img class="h-24 md:h-28" src="https://unmuhpnk.ac.id/assets/5e15bcee33d3e51a6f929fd706ea14e8bab93e63.png"
+                alt="logo-ump" />
+        </div>
+    </section>
+</body>
+
+</html>
